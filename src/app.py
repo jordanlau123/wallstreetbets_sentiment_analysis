@@ -7,7 +7,7 @@ import praw
 import time
 import functions as fn
 import spacy
-from decouple import config
+from decouple import Config, RepositoryEnv
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 st.set_page_config(layout="wide")
 
@@ -21,12 +21,16 @@ Created by: Jordan L.
 ### Companies that are currently *Hot* on WSB :fire: :
 """
 
-userID = config('client_id',default='')
-password = config('client_secret',default='')
+from decouple import Config, RepositoryEnv
+
+DOTENV_FILE = 'reddit.env'
+env_config = Config(RepositoryEnv(DOTENV_FILE))
+SECRET_USER = env_config.get('client_id')
+SECRET_KEY = env_config.get('client_secret')
 
 #connect to reddit 
-reddit = praw.Reddit(client_id = userID,
-                    client_secret= password,
+reddit = praw.Reddit(client_id = SECRET_USER,
+                    client_secret= SECRET_KEY,
                     user_agent = "ua")
 #select subrreddit
 subreddit = reddit.subreddit('wallstreetbets')
