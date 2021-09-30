@@ -5,7 +5,7 @@ from nltk import FreqDist
 import nltk
 from collections import defaultdict
 from collections import Counter
-nltk.download('wordnet')
+#nltk.download('wordnet')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA 
 import spacy
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
