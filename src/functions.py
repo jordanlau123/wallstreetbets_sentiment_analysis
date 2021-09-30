@@ -1,25 +1,15 @@
 import pandas as pd
 import praw
-import emoji
 from praw.models import MoreComments
-from nltk.corpus import stopwords
-from nltk.tokenize import RegexpTokenizer
-from nltk.stem import WordNetLemmatizer
-from nltk.stem import PorterStemmer
 from nltk import FreqDist
-import re
 import en_core_web_sm
-import spacy
 import nltk
-import string
 from collections import defaultdict
 from collections import Counter
 nltk.download('wordnet')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA 
-
 import spacy
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
-
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.express as px
