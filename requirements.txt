@@ -5,7 +5,6 @@ praw==7.4.0
 spacy==3.0.5
 decouple
 nltk==3.5
-en_core_web_sm==3.0.0
 wordcloud==1.8.1
 matplotlib==3.3.4
 plotly==5.3.1
