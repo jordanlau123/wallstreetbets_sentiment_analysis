@@ -2,7 +2,6 @@ import pandas as pd
 import praw
 from praw.models import MoreComments
 from nltk import FreqDist
-import en_core_web_sm
 import nltk
 from collections import defaultdict
 from collections import Counter
@@ -21,7 +20,7 @@ def create_stock_list(subreddit):
     stocks = defaultdict(list)
     stocks_list = []
     
-    for submission in subreddit.hot(limit=500):
+    for submission in subreddit.hot(limit=300):
     #     print(submission.title)
     #     print("submission ID:", submission.id, "\n")
         
