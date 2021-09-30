@@ -7,7 +7,6 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
 from nltk import FreqDist
-import emoji
 import re
 import en_core_web_sm
 import spacy

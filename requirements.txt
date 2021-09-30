@@ -1,0 +1,17 @@
+streamlit
+numpy
+pandas
+collections
+praw
+time
+spacy
+decouple
+praw
+nltk
+re
+spacy
+en_core_web_sm
+string
+wordcloud
+matplotlib
+plotly
