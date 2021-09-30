@@ -21,8 +21,6 @@ Created by: Jordan L.
 ### Companies that are currently *Hot* on WSB :fire: :
 """
 
-from decouple import Config, RepositoryEnv
-
 DOTENV_FILE = 'reddit.env'
 env_config = Config(RepositoryEnv(DOTENV_FILE))
 SECRET_USER = env_config.get('client_id')
