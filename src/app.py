@@ -7,6 +7,7 @@ import praw
 import time
 import functions as fn
 import spacy
+from decouple import config
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 st.set_page_config(layout="wide")
 
@@ -20,9 +21,12 @@ Created by: Jordan L.
 ### Companies that are currently *Hot* on WSB :fire: :
 """
 
+userID = config('client_id',default='')
+password = config('client_secret',default='')
+
 #connect to reddit 
-reddit = praw.Reddit(client_id = "n_KKscn52fwB33HMMoyE8g",
-                    client_secret= "U1tOZaXAVnWIj-3tiS8Uqjwah8YooA",
+reddit = praw.Reddit(client_id = userID,
+                    client_secret= password,
                     user_agent = "ua")
 #select subrreddit
 subreddit = reddit.subreddit('wallstreetbets')
