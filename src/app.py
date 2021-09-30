@@ -7,7 +7,7 @@ import praw
 import time
 import functions as fn
 import spacy
-from decouple import Config, RepositoryEnv
+from decouple import config, RepositoryEnv
 #import en_core_web_sm
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 st.set_page_config(layout="wide")
