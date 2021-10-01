@@ -3,7 +3,6 @@ numpy==1.20.
 pandas==1.2.3
 praw==7.4.0
 spacy==3.0.5
-decouple
 nltk==3.5
 wordcloud==1.8.1
 matplotlib==3.3.4
