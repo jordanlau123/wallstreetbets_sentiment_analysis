@@ -7,8 +7,7 @@ import praw
 import time
 import functions as fn
 import spacy
-#from decouple import Config, RepositoryEnv
-import decouple
+from decouple import Config, RepositoryEnv
 #import en_core_web_sm
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 st.set_page_config(layout="wide")
@@ -24,7 +23,7 @@ Created by: Jordan L.
 """
 
 DOTENV_FILE = 'reddit.env'
-env_config = decouple.Config(decouple.RepositoryEnv(DOTENV_FILE))
+env_config = Config(RepositoryEnv(DOTENV_FILE))
 SECRET_USER = env_config.get('client_id')
 SECRET_KEY = env_config.get('client_secret')
 
