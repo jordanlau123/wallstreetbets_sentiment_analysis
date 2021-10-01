@@ -43,7 +43,7 @@ subreddit = reddit.subreddit('wallstreetbets')
 stocks_and_subid, stocks_list = fn.create_stock_list(subreddit)
 
 #read in stock listings
-nyse_nasdaq_listings = pd.read_csv("~/wallstreetbets_sentiment_analysis/data/nyse_nasdaq_listings.csv")
+nyse_nasdaq_listings = pd.read_csv("~/data/nyse_nasdaq_listings.csv")
 
 #----------------DataFrame for Hot Stocks--------------
 
