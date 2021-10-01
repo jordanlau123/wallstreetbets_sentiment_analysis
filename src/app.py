@@ -11,8 +11,10 @@ from decouple import Config, RepositoryEnv
 import os
 #import en_core_web_sm
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
-st.set_page_config(layout="wide")
+nltk.download('vader_lexicon') 
 
+#set wide page
+st.set_page_config(layout="wide")
 
 """
 # r/Wallstreetbets Sentiment Analysis
