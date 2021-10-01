@@ -7,6 +7,7 @@ import praw
 import time
 import functions as fn
 import spacy
+import nltk
 from decouple import Config, RepositoryEnv
 import os
 #import en_core_web_sm

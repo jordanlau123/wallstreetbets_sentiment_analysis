@@ -9,6 +9,7 @@ from collections import Counter
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA 
 import spacy
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
+nltk.download('vader_lexicon') 
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.express as px
