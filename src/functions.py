@@ -242,7 +242,11 @@ def word_cloud(df, sentiment):
     freq = FreqDist(words).most_common(20)
     word_freqs = ' , '.join([str(p) for p in freq])
     
-    wordcloud = WordCloud(background_color = 'white', width=800, height=400).generate(word_freqs)
+    color = "Greens"
+    if sentiment == "negative":
+        color = "Reds"
+    
+    wordcloud = WordCloud(background_color = 'white', width=800, height=400, colormap = color).generate(word_freqs)
     plt.imshow(wordcloud, interpolation ='bilinear', aspect="auto")
     
     return wordcloud
