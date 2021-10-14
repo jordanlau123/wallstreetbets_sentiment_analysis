@@ -17,13 +17,27 @@ import plotly.graph_objects as go
 
 
 def create_stock_list(subreddit):
+    """
+    Get all comments from posts in the specified subreddit 
+    containing the specified stock ticker
+
+    Parameters
+    -------------
+    subreddit : str
+ 
+    Returns
+    -------------
+    1. (defaultdict(list)) Stock ticker and all submission id's relating to that stock
+    2. (list) stocks mentioned in top 100 posts 
     
+    Example
+    -------------
+    get_comments(subid_of_picked_stock, reddit)
+    """
     stocks = defaultdict(list)
     stocks_list = []
     
     for submission in subreddit.hot(limit=100):
-    #     print(submission.title)
-    #     print("submission ID:", submission.id, "\n")
         
         words = submission.title.split()
         ticker = list(set(filter(lambda word: word.lower().startswith('$') and word[1:].isalpha(), words)))
@@ -53,6 +67,24 @@ def remove_des(name):
 
 
 def get_comments(tickers, reddit):
+    """
+    Get all comments from posts in the specified subreddit 
+    containing the specified stock ticker
+
+    Parameters
+    -------------
+    tickers : list
+    
+    reddit : reddit API 
+ 
+    Returns
+    -------------
+    (list) All comments for posts relating to the specified ticker
+    
+    Example
+    -------------
+    get_comments(subid_of_picked_stock, reddit)
+    """
     comments_all_posts = []
     for i in tickers:
         post = reddit.submission(id=i)
@@ -102,8 +134,6 @@ def preprocess(
     return " ".join(clean_text)
 
 
-
-
 def vader_sentiment(cleaned_text:list):
     """
     Sentiment analysis using Vader
@@ -129,7 +159,20 @@ def vader_sentiment(cleaned_text:list):
 
 def sentiment_barchart(df): 
     """
-    bar chart for sentiment counts
+    Given a dataframe with the sentences/words and sentiment, returns a barchart
+    showing distribution of sentiments (pos, neu, neg)
+
+    Parameters
+    -------------
+    df : pd.DataFrame
+    
+    Returns
+    -------------
+    Plotly Bar Chart
+    
+    Example
+    -------------
+    sentiment_barchart(sentiment_df)
     """
     layout = go.Layout(
         margin=go.layout.Margin(
@@ -154,6 +197,21 @@ def sentiment_barchart(df):
 
 
 def pie_chart(df):
+    """
+    Given a dataframe stock tickers and counts, return pie chart for distribution
+
+    Parameters
+    -------------
+    df : pd.DataFrame
+    
+    Returns
+    -------------
+    Plotly Pie Chart
+    
+    Example
+    -------------
+    pie_chart(stock_df)
+    """
     
     layout = go.Layout(
         margin=go.layout.Margin(
@@ -173,9 +231,6 @@ def pie_chart(df):
     fig.update_layout(showlegend=False, autosize=True)
     
     return fig
-
-
-# In[3]:
 
 
 def preprocess_word(
