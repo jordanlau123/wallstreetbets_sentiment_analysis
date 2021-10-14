@@ -21,7 +21,7 @@ def create_stock_list(subreddit):
     stocks = defaultdict(list)
     stocks_list = []
     
-    for submission in subreddit.hot(limit=300):
+    for submission in subreddit.hot(limit=100):
     #     print(submission.title)
     #     print("submission ID:", submission.id, "\n")
         
@@ -248,5 +248,5 @@ def word_cloud(df, sentiment):
     
     wordcloud = WordCloud(background_color = 'white', width=800, height=400, colormap = color).generate(word_freqs)
     plt.imshow(wordcloud, interpolation ='bilinear', aspect="auto")
-    
+     
     return wordcloud

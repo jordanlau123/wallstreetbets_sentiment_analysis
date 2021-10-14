@@ -26,10 +26,6 @@ Created by: Jordan L.
 ### Companies that are currently *Hot* on WSB :fire: :
 """
 
-# DOTENV_FILE = 'reddit.env'
-# env_config = Config(RepositoryEnv(DOTENV_FILE))
-# SECRET_USER = env_config.get('client_id')
-# SECRET_KEY = env_config.get('client_secret')
 
 #heroku config vars
 SECRET_USER = os.environ["client_id"]
